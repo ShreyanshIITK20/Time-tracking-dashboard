@@ -43,7 +43,7 @@ body{
 }
 
 .content_value{
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 300;
     padding: 0%;
     margin: 0.4em 0px 0px 0px;
@@ -120,3 +120,8 @@ body{
     transform: scale(1.01);
     cursor: pointer;
 }
+.active_state{
+    color:white;
+    transform: scale(1.01);
+}
+
