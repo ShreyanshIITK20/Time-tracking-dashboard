@@ -13,6 +13,7 @@ body{
     grid-template-columns: repeat(4,1fr);
     gap: 1em;
     grid-auto-rows: minmax(250px,auto);
+    color: white;
 }
 .child{
     display: grid;
@@ -23,12 +24,17 @@ body{
     grid-area: 1/1/3/2;
     border-radius: 10px;
     background-color: aqua;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
 }
 .child .content{
     padding: 5%;
     grid-area: 2/1/6/2;
     border-radius: 10px;
-    background-color:burlywood;
+    background-color:hsl(235, 46%, 20%);
+    position: relative;
+    z-index: 100;
 }
 .report{
     grid-column: 1;
@@ -65,21 +71,21 @@ body{
         grid-template-columns: repeat(1,1fr);
     }
 }
-/* .work{
-
+.work .bg{
+    background-color: hsl(15, 100%, 70%);
 }
-.play{
-
+.play .bg{
+    background-color: hsl(195, 74%, 62%);
 }
-.study{
-
+.study .bg{
+    background-color: hsl(348, 100%, 68%);
 }
-.exercise{
-
+.exercise .bg{
+    background-color: hsl(145, 58%, 55%) ;
 }
-.social{
-
+.social .bg{
+    background-color: hsl(264, 64%, 52%);
 }
-.selfcare{
-
-} */
+.selfcare .bg{
+    background-color: hsl(43, 84%, 65%);
+}
