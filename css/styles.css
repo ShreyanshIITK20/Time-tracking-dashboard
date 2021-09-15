@@ -4,7 +4,7 @@ html{
     background-color:  hsl(226, 43%, 10%);
 }
 body{
-    padding: 5% 15% 0 15%;
+    padding: 5% 15% 5% 15%;
     font-family: 'Rubik';
 }
 
@@ -12,7 +12,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 1em;
-    grid-auto-rows: minmax(250px,auto);
+    /* grid-auto-rows: minmax(250px,auto); */
     color: white;
 }
 .child{
@@ -49,7 +49,7 @@ body{
     margin: 0.4em 0px 0px 0px;
 }
 .content_prev{
-    color: hsl(235, 45%, 61%);
+    color: hsl(236, 100%, 87%);
     font-weight: 500;
 }
 
@@ -67,12 +67,29 @@ body{
 }
 
 .repo{
-    height: 80%;
+    height: 90%;
     position: relative;
     max-height: 100%;
 }
+.repo img{
+    max-width:100%; 
+    width: 45%;
+    border: 0.2em solid white;
+    border-radius: 100%;
+    margin-bottom: 12%;
+}
+.repo_details{
+    margin-top: 10px;
+}
+
+.name{
+    color: white;
+    font-size: 3rem;
+    margin-top: 0;
+    font-weight: 300;
+}
 .week{
-    height: 80%;
+    height: 60%;
     align-self: flex-end;
 }
 
@@ -85,9 +102,67 @@ body{
     font-weight: 500;
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:700px) {
+    body{
+        padding: 5%;
+    }
     .wrapper{
         grid-template-columns: repeat(1,1fr);
+    }
+
+    .week_bar{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .week{
+        height: 30%;
+        padding: 8%;
+    }
+    .weekly{
+        text-align: center;
+    }
+    .monthly{
+        text-align: right;
+    }
+    .repo{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        height: 50%;
+        padding: 8%;
+    }
+    .child .bg{
+        height: 20px;
+    }
+    .report img{
+        margin: 0px;
+        height: 58px;
+        width: 59px;
+
+    }
+    .name{
+        font-size: 1.4rem;
+    }
+
+    .repo_details{
+        padding-top: 7%;
+        margin-top: 0px;
+    }
+
+    .child .content{
+        height: 50px;
+        padding: 8%;
+    }
+    .content_value{
+        font-size: 1.7rem;
+    }
+
+    .child .content_body{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+    }
+
+    .content_prev{
+        text-align: right;
     }
 }
 .work{
@@ -123,5 +198,10 @@ body{
 .active_state{
     color:white;
     transform: scale(1.01);
+}
+
+.content:hover{
+    background-color: #35397a;
+    cursor: pointer;
 }
 
