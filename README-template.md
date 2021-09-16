@@ -1,6 +1,8 @@
 # Frontend Mentor - Time tracking dashboard solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)
+
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects and collaborate with greatest developers around the world.
 
 ## Table of contents
 
@@ -14,9 +16,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -24,26 +24,21 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
+- View the optimal layout for the site depending on their device's screen size (solution is created for best viewing on Desktop size-1440px and Mobile size-375px)
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Javascript functionality to extract JSON data](https://raw.githubusercontent.com/ShreyanshIITK20/Time-tracking-dashboard/main/screenshots/JS.png?token=ATKRF43GUQBQIS6GJCMQCUTBJRHQQ)
+![Custom CSS](https://raw.githubusercontent.com/ShreyanshIITK20/Time-tracking-dashboard/main/screenshots/CSS.png?token=ATKRF4Z6J7DE37B2RZVHKXTBJRHNC)
+![HTML structure](https://raw.githubusercontent.com/ShreyanshIITK20/Time-tracking-dashboard/main/screenshots/HTML.png?token=ATKRF4Z4F24CJH5XKAGBQ7LBJRHQA)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Git repo](https://github.com/ShreyanshIITK20/Time-tracking-dashboard)
+- Live Site URL: [Time tracking dashboard](https://shreyanshiitk20.github.io/Time-tracking-dashboard/)
 
 ## My process
 
@@ -51,62 +46,53 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Javascript ES6
+- Desktop-first workflow
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+This project was mainly based on the use of CSS grid boxes, a feature I never used before to handle layouts. For such purposes, I always chose Bootstrap's grid system and its cards, but I took this as a challenge to work entirely with CSS and don't depend on Bootstrap's classes. Since this was my first work with grid systems, it was kinda hard to adapt to its working and syntax initially. Secondly, I took the optional challenge to use data.json as my primary data file wherein I struggled a lot to fetch the contents and use them dynamically in my HTML file. For this, I used fetch() and forEach looping, alongside with restructured data file.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="wrapper">
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1em;
+    /* grid-auto-rows: minmax(250px,auto); */
+    color: white;
+}
+.child{
+    display: grid;
+    grid-template-columns: 1fr;
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+containers.forEach(function(container){
+        var containerClass = '.'+container.title
+        $(containerClass+" .content_value").html(container['timeframes'][clickedState]['current']+" hrs")
+        $(containerClass+" .content_prev").html(prevName + container['timeframes'][clickedState]['previous']+" hrs")
+      })
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+While working on this project I used raw HTML and CSS to develop the frontend, but later realised the need of using ReactJS's components which could have made everything so much smoother and simpler since most of the code I wrote in HTML was redundant with minor changes. I will try to work on similar projects using React to increase the efficiency of my code.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [MDN docs: Using Fetch - Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) - I struggled a bit to work with JSON data in my JS file and this document helped a lot to sort it out.
+- [w3schools CSS grid layours](https://www.w3schools.com/css/css_grid.asp) - It helped a lot to understand different properties than can be used along with grid layouts in CSS
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- [Frontendmentor profile](https://www.frontendmentor.io/profile/ShreyanshIITK20)
+- [Instagram profile](https://www.instagram.com/_shreyanshagarwal_/)
+- [LinkedIn profile](https://www.linkedin.com/in/shreyansh-agarwal-9a0482131/)
+- [Twitter account](https://twitter.com/_Shreyansh13_)
