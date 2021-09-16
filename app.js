@@ -5,11 +5,11 @@ fetch('data.json')
     var containers = [work,play,study,exercise,social,selfcare]             //creating an array of arrays
 
     $('.daily,.weekly,.monthly').click(function(){
-      var clickedState = this.getAttribute('class')                 //for eg daily
-      var clickedclass = '.'+clickedState                           //for eg .daily
+      var clickedState = this.getAttribute('class')                         //for eg daily
+      var clickedclass = '.'+clickedState                                   //for eg .daily
 
-      var prevName = ""                                             //yesterday, last week thing
-      var notStates = ""                                            //classes not clicked
+      var prevName = ""                                                     //yesterday, last week thing
+      var notStates = ""                                                    //classes not clicked
 
       if(clickedState==='daily') {
         prevName='Yesterday - '
@@ -24,8 +24,8 @@ fetch('data.json')
         notStates = '.daily,.weekly'
       }
 
-      $(clickedclass).addClass("active_state")                      //adding css class on clicking the tab
-      $(notStates).removeClass("active_state")                      //removing same css class from other two tabs if they were already clicked
+      $(clickedclass).addClass("active_state")                              //adding css class on clicking the tab
+      $(notStates).removeClass("active_state")                              //removing same css class from other two tabs if they were already clicked
 
       containers.forEach(function(container){
         var containerClass = '.'+container.title
